@@ -15,23 +15,23 @@ function print(arg) {
     document.write(arg + '<br>');
 }
 
-const discr = b ** 2 - (4 * a * c);
-print('D = ' + discr + '<br>');
+const totalResult = result(a, b, c);
+print('D = ' + discriminant(a, b, c));
+print(totalResult);
 
-const answerXOne = (-1 * b + Math.sqrt(discr)) / (2 * a);
-const answerXTwo = (-1 * b - Math.sqrt(discr)) / (2 * a);
-const answerBoth = -b / (2 * a);
-
-function countingX(discr) {
-    if (discr < 0) {
-        print('Немає вирішення')
-    }
-    else if (discr > 0) {
-        print('x1 = ' + answerXOne + ' x2 = ' + answerXTwo)
-    }
-    else {
-        print('x1,2 = ' + answerBoth);
-    }
-    return ' ';
+function discriminant(a, b, c) {
+    return (b ** 2 - 4 * a * c);
 }
-document.write(countingX(discr));
+
+function result (a, b, c) {
+    const discr = discriminant(a, b, c);
+    
+    if (discr < 0) {
+        return ('Немає вирішення') ;
+    } else if (discr > 0) {
+        return ('x1 = ' + (-b + Math.sqrt(discr)) / (2 * a) + ' x2 = ' + (-b - Math.sqrt(discr)) / (2 * a) );
+        } else {
+        return ('x1,2 = ' + (-b / (2 * a)));
+        }
+}
+
