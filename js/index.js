@@ -32,6 +32,6 @@ function countingX(discr) {
     else {
         print('x1,2 = ' + answerBoth);
     }
-    return;
+    return ' ';
 }
 document.write(countingX(discr));
